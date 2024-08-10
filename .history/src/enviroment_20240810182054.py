@@ -1,5 +1,4 @@
 import numpy as np
-from PIL import Image
 
 class Environment:
     def __init__(self, width, height):

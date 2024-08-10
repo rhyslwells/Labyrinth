@@ -1,3 +1,5 @@
+import random
+
 class Actor:
     def __init__(self, position, environment, speed=1):
         """
@@ -75,10 +77,9 @@ class Actor:
         new_x = self.position[0] + direction[0] * self.speed
         new_y = self.position[1] + direction[1] * self.speed
         
-        # Check bounds and obstacles
+        # Update position if within bounds
         if (0 <= new_x < self.environment.width and
-            0 <= new_y < self.environment.height and
-            self.environment.grid[new_y, new_x] != '#'):
+            0 <= new_y < self.environment.height):
             self.position = (new_x, new_y)
         else:
             print(f"Move blocked by obstacle or out of bounds at {(new_x, new_y)}. Staying at {self.position}.")
