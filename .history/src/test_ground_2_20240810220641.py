@@ -15,10 +15,10 @@ def main():
     game.save_initial_state()
     
     # Simulate the game without saving images
-    game.simulate()
+    game.simulate(save_images=False)
     
     # Create a GIF and clean up PNG files
-    game.create_gif()
+    # game.create_gif()
     
     # Save the recorded data
     game.save_dataframe(f"gif_data/{game_name}_data.csv")

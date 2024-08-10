@@ -15,7 +15,7 @@ def main():
     game.save_initial_state()
     
     # Simulate the game without saving images
-    game.simulate()
+    game.simulate(save_images=True)
     
     # Create a GIF and clean up PNG files
     game.create_gif()

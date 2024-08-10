@@ -82,7 +82,7 @@ class Game:
         gif_filename = f"gif_data/{self.name}.gif"
         
         # Save the GIF
-        images[0].save(gif_filename, save_all=True, append_images=images[1:], duration=500, loop=0)
+        images.save(gif_filename, save_all=True, append_images=images[1:], duration=500, loop=0)
         print(f"GIF saved as {gif_filename}.")
         
         # Remove the PNG files

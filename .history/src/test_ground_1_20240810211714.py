@@ -1,6 +1,6 @@
 from PIL import Image
 from actor import Actor
-from environment import Environment
+from src.environment import Environment
 
 # Example useage of the Environment class :--------------------------------------------------------------------------
 

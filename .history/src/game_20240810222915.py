@@ -74,7 +74,7 @@ class Game:
     def create_gif(self):
         """Create a GIF from the saved images and remove the PNG files."""
         # First, simulate the game with image saving enabled
-        # self.simulate(save_images=True)
+        self.simulate(save_images=True)
         
         num_steps = len(self.actor.predefined_moves) + 1
         print(f"Creating GIF with {num_steps} steps...")
