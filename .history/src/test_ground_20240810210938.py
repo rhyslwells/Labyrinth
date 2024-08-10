@@ -76,4 +76,5 @@ images[0].save(gif_filename, save_all=True, append_images=images[1:], duration=5
 
 print(f"GIF saved as {gif_filename}.")
 
-# Can we make this dynamic?
+
+# Example generation of Game: -----------------------------------------------------------------------------
