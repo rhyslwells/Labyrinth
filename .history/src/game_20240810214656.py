@@ -26,13 +26,12 @@ class Game:
         os.makedirs('gif_data', exist_ok=True)
         
         # Initialize the DataFrame to record actor's position and in-game time at each step
-        self.data = pd.DataFrame(columns=['Time', 'x_coord', 'y_coord'])
+        self.data = pd.DataFrame(columns=['Step', 'Position', 'Time'])
     
-    def save_initial_state(self,save_images=False):
+    def save_initial_state(self):
         """Save the initial state of the environment."""
         self.environment.place_actor(self.actor.position, "A")
-        if save_images:
-            self.environment.save_to_image(f"gif_data/{self.name}_step_0.png")
+        self.environment.save_to_image(f"gif_data/{self.name}_step_0.png")
         
         # Record the initial state
         self.record_step(0)
@@ -43,13 +42,13 @@ class Game:
         x, y = self.actor.position
         new_data = pd.DataFrame({
             'Time': [step],  # In-game time is the step number
-            'x_coord': [int(x)],
-            'y_coord': [int(y)]
+            'x_coord': [x],
+            'y_coord': [y]
         })
         self.data = pd.concat([self.data, new_data], ignore_index=True)
     
-    def simulate(self, save_images=False):
-        """Simulate the actor's movement and optionally save images for each step."""
+    def simulate(self):
+        """Simulate the actor's movement and save images for each step."""
         predefined_moves = self.actor.predefined_moves
         
         for step in range(1, len(predefined_moves) + 1):
@@ -61,21 +60,15 @@ class Game:
             # Actor takes a step
             self.actor.step()
             
-            # Place the actor's new position on the grid
+            # Place the actor's new position on the grid and save the image
             self.environment.place_actor(self.actor.position, "A")
-            
-            # Save the image only if save_images is True
-            if save_images:
-                self.environment.save_to_image(f"gif_data/{self.name}_step_{step}.png")
+            self.environment.save_to_image(f"gif_data/{self.name}_step_{step}.png")
             
             # Record the current step
             self.record_step(step)
     
     def create_gif(self):
         """Create a GIF from the saved images and remove the PNG files."""
-        # First, simulate the game with image saving enabled
-        self.simulate(save_images=True)
-        
         num_steps = len(self.actor.predefined_moves) + 1
         images = [Image.open(f"gif_data/{self.name}_step_{i}.png") for i in range(num_steps)]
         gif_filename = f"gif_data/{self.name}.gif"
@@ -108,11 +101,11 @@ def main():
     # Save the initial state
     game.save_initial_state()
     
-    # Simulate the game without saving images
-    game.simulate(save_images=False)
+    # Simulate the game
+    game.simulate()
     
     # Create a GIF and clean up PNG files
-    # game.create_gif()
+    game.create_gif()
     
     # Save the recorded data
     game.save_dataframe(f"gif_data/{game_name}_data.csv")
