@@ -6,6 +6,8 @@ A single example:
 
 spck  test 2
 
+phone tested
+
 ![Game 1 GIF](./src/gif_data/Game_4.gif)
 
 ## Project Goals
