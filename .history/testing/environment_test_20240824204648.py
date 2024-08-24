@@ -1,0 +1,30 @@
+import numpy as np
+import pandas as pd
+import pygame
+from components.game import Game
+from components.utils.rendering import GameWindow
+
+FPS = 60
+
+# Create a Game instance
+game = Game(name='SimpleGridGame', world='7x7-simple', delay=10)
+
+# Initialize GameWindow for visualization
+game_window = GameWindow(game, width=800, height=800, fps=FPS)
+
+# Run the visualization loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Render the game environment
+    game_window.render()
+    
+    # Optional: Step through the game (e.g., move the actor around) for demonstration
+    # Here we simulate a step in the game loop
+    action = game.sample()  # Random action for demonstration
+    game.step(action)
+    
+pygame.quit()
