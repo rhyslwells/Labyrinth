@@ -4,6 +4,8 @@ Inspired by [Labyrinth](https://en.wikipedia.org/wiki/Labyrinth) and [OpenAI Pla
 
 A single example:
 
+spck test
+
 ![Game 1 GIF](./src/gif_data/Game_4.gif)
 
 ## Project Goals
