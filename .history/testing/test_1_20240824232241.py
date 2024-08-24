@@ -4,11 +4,10 @@ import os
 # Add the parent directory of `components` and `testing` to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import pandas as pd
 import pygame
-from components.game.game import Game
-from components.utils.rendering import GameWindow
-FPS = 60
+from components.game.game_everything import Game
+from components.game.rendering import GameWindow
+FPS = 30
 
 # Create a Game instance
 game = Game(name='SimpleGridGame', world='7x7-simple', delay=10)
@@ -32,3 +31,4 @@ while running:
     game.step(action)
     
 pygame.quit()
+

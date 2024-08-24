@@ -1,7 +1,7 @@
 # game.py
 import gymnasium as gym
 import numpy as np
-from components.actors.actor import Actor
+from ..actors.actor import Actor
 from game.environment_manager import EnvironmentManager
 from game.renderer import Renderer
 from game.data_handler import DataHandler

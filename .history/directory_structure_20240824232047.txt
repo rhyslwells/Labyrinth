@@ -1,0 +1,13 @@
+project_root/
+│
+├── components/
+│   ├── game/
+│   │   ├── __init__.py
+│   │   ├── game.py
+│   │   └── environments/
+│   │       └── 7x7-simple.csv
+    ├── actors/actor.py
+│   └── utils/
+│       └── rendering.py
+└── testing/
+    └── environment_test.py

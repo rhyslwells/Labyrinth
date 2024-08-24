@@ -2,9 +2,9 @@
 import gymnasium as gym
 import numpy as np
 from components.actors.actor import Actor
-from game.environment_manager import EnvironmentManager
-from game.renderer import Renderer
-from game.data_handler import DataHandler
+from components.game.environment_manager import EnvironmentManager
+from components.game.renderer import Renderer
+from components.game.data_handler import DataHandler
 import os
 import pygame
 import matplotlib as plt

@@ -89,3 +89,12 @@ class Actor:
         """
         direction = self.make_decision()
         self.move(direction)
+
+    def set_predefined_moves(self, moves):
+        """
+        Set a sequence of predefined moves for the actor.
+        
+        :param moves: String of moves (e.g., "UULLRDU").
+        """
+        self.predefined_moves = list(moves)
+        self.current_move_index = 0  # Reset the index when setting new moves

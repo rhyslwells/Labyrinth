@@ -2,13 +2,9 @@
 import gymnasium as gym
 import numpy as np
 from components.actors.actor import Actor
-from game.environment_manager import EnvironmentManager
-from game.renderer import Renderer
-from game.data_handler import DataHandler
-import os
-import pygame
-import matplotlib as plt
-from typing import Tuple, Dict
+from components.game.environment_manager import EnvironmentManager
+from components.game.renderer import Renderer
+from components.game.data_handler import DataHandler
 
 class Game(gym.Env):
     def __init__(self, name: str, world: str = '7x7-simple', delay: int = 0):

@@ -1,0 +1,1 @@
+findstr /R /C:"\components" /C:"\testing" full_tree_output.txt > filtered_tree_output.txt
